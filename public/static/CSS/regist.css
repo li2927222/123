@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	background: dodgerblue;
+	background-image: url('../img/timg3.jpg');
+}
+
+#info {
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	text-align: center;
+	width: 800px;
+	height: 550px;
+	background: white;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	background-image: url('../img/timg.jpg');
+}
+
+p {
+	margin: 40px;
+}
+
+.xinghao {
+	color: red;
+}
+
+.tag {
+	width: 200px;
+	float: left;
+}
+
+.text {
+	position: relative;
+	width: 200px;
+	height: 20px;
+	outline: none;
+	border: 1px solid #666;
+	border-radius: 5px;
+	text-align: center;
+}
+.text:focus {
+	transition: 0.5s;
+	background: #FFDDAA;
+}
+
+.selecter {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#regist_bt {
+	position: relative;
+	width: 100px;
+	height: 25px;
+	border-radius: 5px;
+	background: white;
+	border: 1px solid black;
+}
+
+#regist_bt:hover {
+	transition: 0.5s;
+	background: #FFDDAA;
+	color: #333;
+}
+
+.warning {
+	display: none;
+	position: absolute;
+	width: 150px;
+	right: 10px;
+	color: red;
+	background: #FFFACD;
+	border-radius: 5px;
+	border: 1px solid #666;
+}

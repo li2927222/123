@@ -1,0 +1,33 @@
+#table-info {
+	position: absolute;
+	left: 0;
+	top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 40%;
+}
+.form-control {
+	width: 200px;
+	margin: auto;
+}
+table td {
+	height: 90px;
+}
+select {
+	width: 200px;
+	text-align: center;
+}
+#area2,#area3 {
+	display: none;
+}
+/*levelchange页面中的表格样式*/
+#table-info1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+}

@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body,html {
+	background: dodgerblue;
+	height: 100%;
+	background-image: url(../img/back.jpg);
+}
+/*#img {
+	height: 50%;
+}*/
+#login {
+	border: 1px solid #9999FF;
+	border-radius: 10px;
+	text-align: center;
+	width: 600px;
+	height: 300px;
+	background: white;
+	background-image: url(../img/back2.jpg);
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	position:absolute;
+}
+.bt {
+	width: 100px;
+	height: 25px;
+	border:1px solid black;
+	border-radius: 5px;
+	background: white;
+}
+.bt:hover{
+	transition: 0.5s;
+	background: #FFDDAA;
+	color: #333;
+	border:1px solid #333;
+}
+p{
+	margin: 50px;
+}
+.label {
+	font-size: 18px;
+}
+.text {
+	border:1px solid #333;
+	height: 20px;
+	border-radius:5px;
+	text-align: center;
+	outline: none;
+}
+.text:focus{
+	transition: 0.5s;
+	background: #FFDDAA;
+	text-align: center;
+}
+#warning {
+	position: relative;
+	bottom:20px;
+}
