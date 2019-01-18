@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>注册界面</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="__CSS__/regist.css" />
+</head>
+<body>
+	<div id="info">
+		<p>
+			<label class="tag">
+					<span class="xinghao">*</span>账号：
+			</label>
+			<input type="text" class="text" id="username">
+			<label class="warning" id="user_info"></label>
+		</p>
+		<p>
+			<label class="tag">
+					<span class="xinghao">*</span>密码：
+			</label>
+			<input type="password" class="text" id="pwd1">
+			<label class="warning" id="pwd1_info"></label>
+		</p>
+		<p>
+			<label class="tag">
+					<span class="xinghao">*</span>确认密码：
+				</label>
+			<input type="password" class="text" id="pwd2">
+			<label class="warning" id="pwd2_info"></label>
+		</p>
+		<p>
+			<label class="tag">
+				<span class="xinghao">*</span>请选择地区：
+			</label>
+			<select name="area" id="area" class="text">
+				<option value="null" class="selecter">选择地区</option>
+				
+			</select>	
+		</p>
+		<p>
+			<label class="tag">
+			二级地区：
+			</label>
+			<select name="area2" id="area2" class="text">			</select>
+		</p>
+		<p>
+			<label class="tag">
+				<span class="xinghao">*</span>用户姓名：
+			</label>
+			<input type="text" class="text" id="name">
+			<label class="warning" id="name"></label>
+		</p>
+		<p>
+			<label class="tag">
+				<span class="xinghao">*</span>手机号：
+			</label>
+			<input type="text" class="text" id="phone">
+			<label class="warning" id="pwd2_info"></label>
+		</p>
+		<p>
+			<input type="button" value="注册" id="regist_bt">
+		</p>
+	</div>
+</body>
+<script type="text/javascript" src="__JS__/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="__JS__/regist.js"></script>
+<script type="text/javascript" src="__JS__/regist_bt.js"></script>
+</html>

@@ -1,0 +1,66 @@
+{include file="public:header" /}
+<link rel="stylesheet" href="__CSS__/add_user.css">
+{include file="public:menu" /}
+<div id="warpper">
+	<div id="table-info1">
+		<table class="table table-bordered table-hover">
+			<thead><h4><b>修改权限</b></h4></thead>
+			<tbody>
+				<th class="info">账号</th>
+				<th class="info">使用人</th>
+				<th class="info">联系电话</th>
+				<th class="info">所属区域</th>
+				<th class="info">权限等级</th>
+				<th class="info">是否可用</th>
+				<th class="info">操作</th>
+				{volist name="data" id="vo"}
+					<tr>
+						<td>{$vo.user}</td>
+						<td>{$vo.user_name}</td>
+						<td>{$vo.phone}</td>
+						<td>{$vo.area}</td>
+						<td>{$vo.level}</td>
+						<td>{if condition="$vo.ban=='1'"}不可用{else}可用{/if}</td>
+						<td>{if condition="$vo.ban=='1'"}
+							    <input type="checkbox" value="{$vo.user}" class="switch" />
+							{else}
+								<input type="checkbox" value="{$vo.user}" checked class="switch" />
+							{/if}
+						</td>
+					</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+{include file="public:footer" /}
+<script type="text/javascript">
+	 $('.switch').bootstrapSwitch({
+		onText:"可用",
+		offText:"禁用",
+		onColor:"success",
+		offColor:"danger",
+		size:"small",
+		onSwitchChange:function(event,state){
+			var ban =0;
+			var user = $(this).val();
+			if(state==true){
+				ban = 0;
+			}else{
+				ban = 1;
+			}
+			$.ajax({
+				type:'post',
+				url:'../Adduser/is_ban',//该方法在控制器Adduser中
+				dataType:'json',
+				data:{
+					'ban':ban,
+					'user':user,
+				},
+				success:function(data){
+					
+				},
+			});
+		}
+	 });
+</script>

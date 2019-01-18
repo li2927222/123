@@ -1,0 +1,62 @@
+{include file="public:header" /}
+<link rel="stylesheet" href="__CSS__/add_user.css">
+{include file="public:menu" /}
+<div id="warpper">
+	<div id="table-info">
+		<table class="table  table-hover">
+			<thead><h4><b>&nbsp;&nbsp;新增账户</b></h4></thead>
+			<tr>
+				<td>账号：</td>
+				<td><input type="text" class="form-control" id="user" ></td>
+				<td id="warning_user"></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" class="form-control" id="pwd1"></td>
+				<td id="warning_pwd1"></td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input type="password" class="form-control" id="pwd2"></td>
+				<td id="warning_pwd2"></td>
+			</tr>
+			<tr>
+				<td>使用人：</td>
+				<td><input type="text" class="form-control" id="user_name"></td>
+				<td id="warning_name"></td>
+			</tr>
+			<tr>
+				<td>手机号：</td>
+				<td><input type="text" class="form-control" id="phone"></td>
+				<td id="warning_phone"></td>
+			</tr>
+			<tr>
+				<td>权限等级：</td>
+				<td><select id="area_level" class="btn btn-default">
+					<option value="0">请选择所属区域</option>
+					<option value="2">市级</option>
+					<option value="3">区域</option>
+				</select></td>
+				<td id="warning_level"></td>
+			</tr>
+			
+			<tr id="area2">
+				<td>市公司：</td>
+				<td><select id="opt-area2" class="btn btn-default">
+
+				</select></td>
+			</tr>
+			<tr id="area3">
+				<td>区域：</td>
+				<td><select id="opt-area3" class="btn btn-default">
+					
+				</select></td>
+			</tr>
+		</table>
+		<p style="text-align: center;">
+			<button class="btn btn-success" id="bt_submit">提交</button>
+		</p>
+	</div>
+</div>
+{include file="public:footer" /}
+<script type="text/javascript" src="__JS__/add_user.js"></script>

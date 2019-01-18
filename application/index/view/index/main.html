@@ -1,0 +1,109 @@
+{include file="public:header" /}
+{include file="public:menu" /}
+<div id="warpper">
+	<form action="{:url('index/info')}" method="post" autocomplete="off">
+		<table class="table table-bordered table-hover " id="tab">
+			<thead><h4><b>&nbsp;&nbsp;新增订单</b></h4></thead>
+			<tr>
+				<td class="warning">所属区域：</td>
+				<td>
+					<select name="area_id" class="btn btn-default">
+						{if $flag=='1'}
+							{volist name="data_area" id="vo"}
+								<option value="{$vo.area_id}">{$vo.area}</option>
+							{/volist}
+						{else}
+							<option value="{$data_area.area_id}">{$data_area.area}</option>
+						}
+						{/if}
+						
+					</select>
+					
+				</td>
+				<td class="warning">订单名称：</td>
+				<td ><input type="text" class="form-control" name="order_name"></td>
+				<td class="warning">使用单位：</td>
+				<td ><input type="text" class="form-control" name="user_company"></td>
+				<td class="warning">信息来源：</td>
+				<td ><select name="info_origin" class="btn btn-default">
+					<option value="运营商">运营商</option>
+					<option value="软件商">软件商</option>
+					<option value="平台商">平台商</option>
+					<option value="其他">其他</option>
+				</select></td>
+				<td class="warning">信息备注：</td>
+				<td><input type="text" class="form-control" name="info_remark" placeholder="如果没有请填“无”！"></td>
+			</tr>
+
+			<!-- 单位联系人表单信息 -->
+			<tr class="info">
+				<td><h5><b>单位联系人：</b></h5></td>
+			</tr>
+			<tr>
+				<td class="success">联系人姓名:</td>
+				<td ><input type="text" class="form-control" name="linkman-name[]"></td>
+				<td class="success">性别：</td>
+				<td class="">
+				<select name="linkman-sex[]" class="btn btn-default">
+					<option value="男">男</option>
+					<option value="女">女</option>
+				</select>
+				<td class="success">电话：</td>
+				<td ><input type="text" class="form-control" name="linkman-phone[]"></td>
+				<td class="success">岗位:</td>
+				<td ><input type="text" class="form-control" name="linkman-position[]"></td>
+				<td class="success">职能:</td>
+				<td ><input type="text" class="form-control" name="linkman-function[]"></td>
+				<td class="success">作用:</td>
+				<td ><input type="text" class="form-control" name="linkman-effect[]"></td>
+				<td><a href="#" id="add_linkman">＋添加联系人</a></td>
+			</tr>
+			<tr id="linkman"></tr>
+
+
+
+			<!-- 主推联系人表单信息 -->
+			<tr class="info"><td><h5><b>助推联系人：</b></h5></td></tr>
+			<tr>
+				<td class="danger">联系人姓名:</td>
+				<td ><input type="text" class="form-control" name="booster-name[]"></td>
+				<td class="danger">性别：</td>
+				<td>
+				<select name="booster-sex[]" class="btn btn-default">
+					<option value="男">男</option>
+					<option value="女">女</option>
+				</select>
+				<td class="danger">电话：</td>
+				<td ><input type="text" class="form-control" name="booster-phone[]"></td>
+				<td class="danger">岗位:</td>
+				<td ><input type="text" class="form-control" name="booster-position[]"></td>
+				<td class="danger">职能:</td>
+				<td ><input type="text" class="form-control" name="booster-function[]"></td>
+				<td class="danger">作用:</td>
+				<td ><input type="text" class="form-control" name="booster-effect[]"></td>
+				<td><a href="#" id="add_booster">＋添加联系人</a></td>
+			</tr>
+			<tr id="booster"></tr>
+		</table>
+		<p style="text-align: center;"><input data-loading-text="Loading..." type="button" class="btn btn-success" id="sub" value="提交"></p>
+	</form>
+</div>
+{include file="public:footer" /}
+<script type="text/javascript">
+	//点击提交后 按钮失效防止重复提交
+	$("#sub").click(function(){
+		var $btn = $(this).button('loading');
+		var flag = 0;
+		$(".form-control").each(function(){
+			if($(this).val()==''){
+				flag = 1;
+			}
+		});
+		if(flag==1){
+			alert("请填写完整信息");
+			$btn.button('reset');
+			return 0;
+		}
+		$("form").submit();
+	});
+</script>
